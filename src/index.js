@@ -4,10 +4,7 @@ import './index.css';
 import App from './App';
 
 ReactDOM.render(
-    <App saludo='hi'>
-      <h1>Learm React</h1>
-      <p>Hola</p>
-    </App>,
+    <App />,
   document.getElementById('root')
 );
 
