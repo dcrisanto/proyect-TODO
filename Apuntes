@@ -1,0 +1,10 @@
+*Instalar temporalmente las herramientas create, react, app para ejecutarlas y luego desaparecerla de nuestra compu, eso permite tener la última versión actualizada de create-react-app
+npx create-react-app name_project
+
+Actualizar node:
+*sudo apt update
+*curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh
+*sudo apt install nodejs
+
+Ejecutar: npm start
+
