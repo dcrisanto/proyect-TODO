@@ -13,15 +13,15 @@ const defaultTodos = [
   },
   {
     text: 'Curso de React: Patrones de Render y Composición',
-    completed: true
+    completed: false
   },
   {
     text: 'Curso de React: Manejo Profesional del Estado',
-    completed: true
+    completed: false
   },
   {
     text: 'Curso Práctico de React',
-    completed: true
+    completed: false
   }
 ];
 
@@ -45,6 +45,26 @@ function App() {
       return todoText.includes(searchText);
     });
   }
+
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text == text);
+    //Enviar los cambios 
+    const newTodos = [...todos];
+    newTodos[todoIndex].completed = true;
+    //Actualizar nuestro estado
+    setTodos(newTodos);
+    //todos[todoIndex] = {
+      //text:todos[todoIndex].///text,
+      //completed: true,
+    //};
+  }
+
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text == text);
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  }
   
   return (
     <React.Fragment>
@@ -60,7 +80,10 @@ function App() {
         {searchedTodos.map(todo => (
           <TodoItem 
           key={todo.text} 
-          text={todo.text} completed={todo.completed} 
+          text={todo.text} 
+          completed={todo.completed} 
+          onComplete={() => completeTodo(todo.text)}
+          onDelete={() => deleteTodo(todo.text)}
           />
         ))}
       </TodoList>}
