@@ -7,6 +7,9 @@ import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodoButton';
 import { Modal } from '../components/Modal';
 import { TodoForm } from '../components/TodoForm';
+import { TodosError } from '../components/TodosError';
+import { TodosLoading } from "../components/TodosLoading";
+import { EmptyTodos } from '../components/EmptyTodos';
 
 function AppUI() {
     //value el que guardamos en el provaider
@@ -25,9 +28,9 @@ function AppUI() {
         <TodoCounter />
         <TodoSearch />
         <TodoList>
-          {error && <p>Estamos presentando un error...</p>}
-          {loading && <p>Estamos cargando...</p>}
-          {(!loading && !searchedTodos.length) && <p>Crea tu primer todo...</p>}
+          {error && <TodosError error={error} />}
+          {loading && <TodosLoading />}
+          {(!loading && !searchedTodos.length) && <EmptyTodos />}
     
           {searchedTodos.map(todo => (
             <TodoItem 
