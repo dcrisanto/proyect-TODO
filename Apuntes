@@ -8,3 +8,7 @@ Actualizar node:
 
 Ejecutar: npm start
 
+*React-context: estado compartido
+herramienta de React que permite crear provaider y consumers para que nuestro estado no sólo se pueda compartir en los diferentes elementos de nuestros componentes sino tambien en los diferentes componentes de nuestra aplicación.
+*Portales: teletransportación de componentes, es decir permite teletransportar nuestros componentes a otro nodo distinto en html.
+

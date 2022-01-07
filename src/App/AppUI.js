@@ -5,7 +5,8 @@ import { TodoSearch } from '../components/TodoSearch';
 import { TodoList } from '../components/TodoList';
 import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodoButton';
-
+import { Modal } from '../components/Modal';
+import { TodoForm } from '../components/TodoForm';
 
 function AppUI() {
     //value el que guardamos en el provaider
@@ -15,6 +16,8 @@ function AppUI() {
       searchedTodos,
       completeTodo,
       deleteTodo,
+      openModal,
+      setOpenModal,
     } = React.useContext(TodoContext);
 
     return(
@@ -36,7 +39,17 @@ function AppUI() {
                   />
                 ))}
         </TodoList>
-        <CreateTodoButton />
+
+        {!!openModal && (
+          <Modal>
+            <TodoForm />
+          </Modal>
+        )}
+
+        <CreateTodoButton 
+          openModal = {openModal}
+          setOpenModal = {setOpenModal}
+        />
       </React.Fragment>
     );
 }

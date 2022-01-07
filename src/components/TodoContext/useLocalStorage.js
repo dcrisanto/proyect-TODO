@@ -18,7 +18,7 @@ function  useLocalStorage(itemName, initialValue) {
       setTimeout(()=>{
         try{
           //Consulta al localStorage
-          const localStorageItem = localStorage.getItem('itemName');
+          const localStorageItem = localStorage.getItem(itemName);
   
           let parsedItem;
   
