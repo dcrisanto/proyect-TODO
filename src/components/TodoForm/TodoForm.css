@@ -29,7 +29,13 @@ textarea {
     width: calc(100% - 25px);
 }
 
-textarea: focus {
+textarea::placeholder {
+    color: #A5A5A5;
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+textarea:focus {
     outline-color: #61DAFA;
 }
 
@@ -41,7 +47,7 @@ textarea: focus {
 }
 
 .TodoForm-button {
-    display: inline-block;    cursor: pointer;
+    display: inline-block;    
     font-size: 2rem;
     cursor: pointer;
     color: #202329;

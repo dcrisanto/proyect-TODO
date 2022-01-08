@@ -20,6 +20,6 @@
     z-index: 1;
   }
   
-  .CreateTodoButton:hover {
+.CreateTodoButton:hover {
     transform: rotate(224deg);
-  }
+}
