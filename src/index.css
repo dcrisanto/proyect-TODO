@@ -8,11 +8,13 @@ html {
   font-size: 62.5%;
 }
 
+
 body {
   background: #F2F4F5;
   color: #1E1E1F;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
+
 
 #root {
   display: flex;
