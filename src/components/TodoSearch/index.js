@@ -9,7 +9,6 @@ function TodoSearch() {
     } = React.useContext(TodoContext);
 
     const onSearchValueChange = (event) => {
-        console.log(event.target.value);
         let value = event.target.value;
         setSearchValue(value);
     };

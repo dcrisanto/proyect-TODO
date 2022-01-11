@@ -10,14 +10,18 @@ html {
 
 
 body {
-  background: #F2F4F5;
-  color: #1E1E1F;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  background: linear-gradient(90deg,#FF87CA, #B983FF);
+
 }
 
 
 #root {
   display: flex;
   flex-direction: column;
-  margin: 0 24px;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: #F0ECE3;    
 }

@@ -1,3 +1,10 @@
+section {
+    width: 90%;
+    min-width: 280px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 ul {
     list-style: none;
     padding-bottom: 56px;

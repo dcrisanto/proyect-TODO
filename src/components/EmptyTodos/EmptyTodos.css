@@ -1,0 +1,9 @@
+.EmptyTodos {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.6rem;
+    background-color: #FF87CA;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}

@@ -6,7 +6,7 @@
     margin-top: 24px;
     justify-content: center;
     align-items: center;
-    background-color: #FAFAFA;
+    background: linear-gradient(90deg,#FF87CA, #FFFFFF);
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
 }
 
