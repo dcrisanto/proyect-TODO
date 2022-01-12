@@ -1,10 +1,8 @@
 import React from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
-const TodoContext = React.createContext();
-
-//Puente para llegar al componente TodoContext.Provider
-function  TodoProvider(props) {
+//convirtiendo en custom hook
+function  useTodos() {
 
     const {
         //recibiendo los estados
@@ -77,10 +75,7 @@ function  TodoProvider(props) {
       */
 
     return(
-        //retornará el componente TodoContext. Este componente envolverá a toda la aplicación, por lo que necesitamos que tenga por dentro a cualquier componente donde llamaremos al Consumidor del contexto
-        <TodoContext.Provider 
-        //tenemos que dar al objeto value las propiedades que vamos a compartir
-        value={{
+      {
             loading,
             error,
             totalTodos,
@@ -93,15 +88,8 @@ function  TodoProvider(props) {
             deleteTodo,
             openModal,
             setOpenModal,
-        }}
-        >
-            {props.children}
-        </TodoContext.Provider>
+      }
     );
 }
 
-export { TodoContext, TodoProvider };
-
-//TodoContex tenemos 2 componentes
-//TodoContext.Provider: lo vamos a utilizar para envolver toda nuestra aplicación en el componente App.js
-//TodoContext.Consumer: Lo utilizaremos en todas partes siempre que necesitemos información de ese estado compartido en cualquiera de nuestros componentes
+export { useTodos };
