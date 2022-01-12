@@ -76,6 +76,7 @@ function  useTodos() {
 
     return(
       {
+            todos,
             loading,
             error,
             totalTodos,

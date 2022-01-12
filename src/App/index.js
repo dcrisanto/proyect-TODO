@@ -10,6 +10,7 @@ import { TodoForm } from '../components/TodoForm';
 import { TodosError } from '../components/TodosError';
 import { TodosLoading } from "../components/TodosLoading";
 import { EmptyTodos } from '../components/EmptyTodos';
+import { EmptySearchResult } from "../components/EmptySearchResult";
 import { useTodos } from "./useTodos";
 import './App.css';
 
@@ -17,6 +18,7 @@ import './App.css';
 
 function App() {
   const {
+    todos,
     totalTodos,
     completedTodos,
     searchValue, 
@@ -31,7 +33,9 @@ function App() {
     setOpenModal,
   } = useTodos();
 
+
   return (
+
     <React.Fragment>
         <TodoHeader>
           <TodoCounter 
@@ -45,12 +49,17 @@ function App() {
         </TodoHeader>
 
         <TodoList 
+            totalTodos={totalTodos}
+            todos={todos}
             error={error}
             loading={loading}
             searchedTodos={searchedTodos}
             onError={() => <TodosError />}
             onLoading={() => <TodosLoading />}
             onEmptyTodos={() => <EmptyTodos />}
+            onEmptySearchResult={()=> <EmptySearchResult 
+              searchValue={searchValue}
+            />}
             render={todo => (
               <TodoItem 
               key={todo.text} 
