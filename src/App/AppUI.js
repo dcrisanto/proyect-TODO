@@ -1,7 +1,8 @@
 import React from 'react';
 import { TodoContext } from '../components/TodoContext'
-import { TodoCounter } from '../components/TodoCounter'
-import { TodoSearch } from '../components/TodoSearch';
+import { TodoHeader } from "../components/TodoHeader";
+import { TodoCounter } from "../components/TodoCounter";
+import { TodoSearch } from "../components/TodoSearch";
 import { TodoList } from '../components/TodoList';
 import { TodoItem } from '../components/TodoItem';
 import { CreateTodoButton } from '../components/CreateTodoButton';
@@ -14,6 +15,10 @@ import { EmptyTodos } from '../components/EmptyTodos';
 function AppUI() {
     //value el que guardamos en el provaider
     const {
+      totalTodos,
+      completedTodos,
+      searchValue, 
+      setSearchValue,
       error,
       loading,
       searchedTodos,
@@ -25,8 +30,16 @@ function AppUI() {
 
     return(
       <React.Fragment>
-        <TodoCounter />
-        <TodoSearch />
+        <TodoHeader>
+          <TodoCounter 
+            totalTodos={totalTodos} 
+            completedTodos={completedTodos}
+          />
+          <TodoSearch 
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
+        </TodoHeader>
         <TodoList>
           {error && <TodosError error={error} />}
           {loading && <TodosLoading />}
