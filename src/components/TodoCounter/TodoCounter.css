@@ -4,3 +4,7 @@
     color: #FF87CA;
     text-align: center;
 }
+
+.TodoCounter--loading {
+    opacity: 25%;
+}
