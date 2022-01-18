@@ -14,6 +14,7 @@ function  useLocalStorage(itemName, initialValue) {
     //Vamos a traer la información que hallamos definido en nuestros componentes
     const [item, setItem] = React.useState(initialValue);
   
+    // Si no enviamos un segundo parámetro se llama cada 1s el useEffect
     React.useEffect(() => {
       setTimeout(()=>{
         try{
@@ -38,7 +39,7 @@ function  useLocalStorage(itemName, initialValue) {
           setError(error);
         }
       }, 1000);
-    });
+    }, []); //enviando un [] se ejecutará sólo una vez el effect
   
     //Persistir la información en local storage, actualizando los items
     const saveItem = newItem => {

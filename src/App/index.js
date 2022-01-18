@@ -12,6 +12,7 @@ import { TodosLoading } from "../components/TodosLoading";
 import { EmptyTodos } from '../components/EmptyTodos';
 import { EmptySearchResult } from "../components/EmptySearchResult";
 import { useTodos } from "./useTodos";
+import { ChangeAlertWithStorageListener } from '../components/ChangeAlert';
 import './App.css';
 
 // useLocalStorage tiene toda la lógica para traer la información del localStorage y mantenernos informados
@@ -72,7 +73,7 @@ function App() {
                   />
             )}
         >
-         {/*  {todo => (
+        {/*  {/*  {todo => (
             <TodoItem 
               key={todo.text} 
               text={todo.text} 
@@ -81,7 +82,7 @@ function App() {
               onDelete={() => deleteTodo(todo.text)}
             />
            )} */}
-        </TodoList>
+        </TodoList> 
       
         {!!openModal && (
           <Modal>
@@ -96,6 +97,9 @@ function App() {
           openModal = {openModal}
           setOpenModal = {setOpenModal}
         />
+
+        <ChangeAlertWithStorageListener />
+
     </React.Fragment>
   );
 }
