@@ -32,6 +32,7 @@ function App() {
     addTodo,
     openModal,
     setOpenModal,
+    sincronizeTodos,
   } = useTodos();
 
 
@@ -98,7 +99,9 @@ function App() {
           setOpenModal = {setOpenModal}
         />
 
-        <ChangeAlertWithStorageListener />
+        <ChangeAlertWithStorageListener 
+          sincronize = {sincronizeTodos}
+        />
 
     </React.Fragment>
   );

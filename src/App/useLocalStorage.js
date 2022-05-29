@@ -1,6 +1,8 @@
 import React from 'react';
 
 function  useLocalStorage(itemName, initialValue) {
+    //estado para sincronizar
+    const [sincronizedItem, setSincronizedItem] = React.useState(true);
     //estado de error
     const [error, setError] = React.useState(false);
     //simulación de api, creando estado de carga
@@ -34,12 +36,14 @@ function  useLocalStorage(itemName, initialValue) {
           setItem(parsedItem);
           //Cuando ya hemos consultado al localStorage, es decir que ya cargó la información
           setLoading(false);
+          setSincronizedItem(true);
         } catch(error) {
           //Actualizando el estado de error
           setError(error);
         }
       }, 1000);
-    }, []); //enviando un [] se ejecutará sólo una vez el effect
+    }, [sincronizedItem]); //enviando un [] se ejecutará sólo una vez el effect
+    // cada vez que halla un cambio en sincronizedItem se llamará a useEffect, es decir cuando se llame a setSincronizedItem.
   
     //Persistir la información en local storage, actualizando los items
     const saveItem = newItem => {
@@ -48,9 +52,16 @@ function  useLocalStorage(itemName, initialValue) {
         localStorage.setItem(itemName, stringifyItem);
         //Modificar el estado, no recargue la página
         setItem(newItem);
+        // setSincronizedItem(true);
       } catch(error) {
         setError(error);
       }
+    };
+
+    //Función para sincronizar
+    const sincronizeItem = () => {
+      setLoading(true);
+      setSincronizedItem(false);
     };
   
     //cuando tenemos + de 1 estado se envía un objecto. Enviando a los componentes que se subscriban
@@ -59,6 +70,7 @@ function  useLocalStorage(itemName, initialValue) {
       saveItem,
       loading,
       error,
+      sincronizeItem,
     };
   }
 

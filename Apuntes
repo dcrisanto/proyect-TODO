@@ -11,4 +11,10 @@ Ejecutar: npm start
 *React-context: estado compartido
 herramienta de React que permite crear provaider y consumers para que nuestro estado no sólo se pueda compartir en los diferentes elementos de nuestros componentes sino tambien en los diferentes componentes de nuestra aplicación.
 *Portales: teletransportación de componentes, es decir permite teletransportar nuestros componentes a otro nodo distinto en html.
+Maquetación
+*React Hooks:estos proveen propiedades, información y actualizadores del estado para que luego en el return de nuestro componente podamos usar estas propiedades, hacer validaciones y renderizar o no ciertos componentes. Si tenemos información que compartir a nuestros componentes llamamos a los React Hooks, no importa si es oficial o un Custom Hooks, luego consumimos esa información en el return de nuestro componente.
+*Render props o render functions: dejamos de tener las vallidaciones y los componentes en el mismo lugar, pasamos las validaciones a otro componente y debemos enviar nuestros componentes a sus render props correspondientes.
+Share data: compartir información entre componentes
+*High Order Components: son funciones que pueden retornar, retornar otras funciones hasta que en algún momento retornemos un componente de React y podamos pasar toda nuestra información.
+*Render Functions: nos permiten compartir información con functions, que en sus parámetros nos dejan esa información que necitaramos que nos compartieran.
 
